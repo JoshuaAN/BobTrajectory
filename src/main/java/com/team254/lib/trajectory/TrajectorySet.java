@@ -29,7 +29,7 @@ public class TrajectorySet {
             .append(right.getSegmentVel(i)).append(",")
             .append(right.getSegmentAcc(i)).append(",")
             .append(right.getSegmentJerk(i)).append(",")
-            .append(center.getSegmentHeading(i)).append(",")
+            .append(center.getSegmentHeading(i))
 			.append("\n");
 		}
 
