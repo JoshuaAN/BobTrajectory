@@ -12,7 +12,7 @@ public class TrajectorySet {
     }
 
     public String toString() {
-		StringBuilder str = new StringBuilder("dt,x,y,left.pos,left.vel,left.acc,left.jerk,center.pos,center.vel,center.acc,center.jerk,right.pos,right.vel,right.acc,right.jerk,heading \n");
+		StringBuilder str = new StringBuilder("dt,x,y,left.pos,left.vel,left.acc,left.jerk,center.pos,center.vel,center.acc,center.jerk,right.pos,right.vel,right.acc,right.jerk,heading\n");
 		for (int i = 0; i < center.getNumSegments(); ++i) {
 			str.append(center.getSegmentDt(i)).append(",")
 			.append(center.getSegmentX(i)).append(",")
