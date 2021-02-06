@@ -54,9 +54,7 @@ public class TrajectoryExporter {
     }
 
     private static void exportToFile(String pathPath, String pathName, TrajectorySet set) {
-        FilePrinter.write(pathPath, pathName + ".left.csv", set.left.toString());
-        FilePrinter.write(pathPath, pathName + ".right.csv", set.right.toString());
-        FilePrinter.write(pathPath, pathName + ".center.csv", set.center.toString());
+        FilePrinter.write(pathPath, pathName + ".csv", set.toString());
     }
 
     private static void exportToClass(String pathPath, String pathName, TrajectorySet set) {

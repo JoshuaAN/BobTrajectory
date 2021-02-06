@@ -68,7 +68,7 @@ public class Trajectory {
 	}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder("dt,x,y,position,velocity,acceleration,jerk,heading\n");
+		StringBuilder str = new StringBuilder("dt,x,y,pos,vel,acc,jerk,heading\n");
 		for (int i = 0; i < getNumSegments(); ++i) {
 			Segment segment = segments.get(i);
 			str.append(RobotConfig.dt).append(",")
@@ -85,4 +85,42 @@ public class Trajectory {
 		return str.toString();
 	}
 
+	public double getSegmentDt(int index) {
+		return RobotConfig.dt;
+	}
+
+	public BigDecimal getSegmentX(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.x).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentY(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.y).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentPos(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.pos).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentVel(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.vel).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentAcc(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.acc).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentJerk(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.jerk).setScale(4, RoundingMode.HALF_UP);
+	}
+
+	public BigDecimal getSegmentHeading(int index) {
+		Segment segment = segments.get(index);
+		return new BigDecimal(segment.heading).setScale(4, RoundingMode.HALF_UP);
+	}
 }
